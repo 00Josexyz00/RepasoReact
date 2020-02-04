@@ -1,0 +1,5 @@
+@IsGranted("ROLE_USER")
+
+                                {% if is_granted("ROLE_USER") %}
+                                <a class="dropdown-item" href="{{ path('fast_rescue_new') }}">Rescate Rápido!</a>
+                                {% endif %}

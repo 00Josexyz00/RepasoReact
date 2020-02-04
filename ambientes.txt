@@ -1,0 +1,76 @@
+import React from 'react';
+import logo from '../logo.svg';
+import '../App.css';
+
+class App extends React.Component{
+  state ={
+    title:"",
+    description:"",
+      tasks:[],
+  }
+
+  handleChangeTitle=(e) => {
+    this.setState({
+      title: e.target.value
+    })
+  };
+
+    handleChangeDescription=(e)=>{
+        this.setState({
+            description: e.target.value
+        })
+    };
+
+  handleAddTask=() =>{
+    const newTask={
+        title: this.state.title,
+        description: this.description,
+    };
+
+    //setState es asincrono
+
+    this.setState((currentState)=> ({
+        //return {   el parentesis reemplaza al return
+            tasks: [
+                ...currentState.tasks,
+                newTask
+            ]
+        }
+   // }
+    ))
+
+      console.log('task', this.state.tasks);
+  };
+
+  render() {
+      const {title, description, tasks}=this.state;
+
+  return (
+   <div>
+
+     <h1>Lista de Tareas</h1>
+     <div>
+       <label htmlFor="title"> Titulo </label>
+       <input type="text" id="title" onChange={this.handleChangeTitle} value={title}/>
+     </div>
+     <div>
+       <label htmlFor="description"> Descripcion </label>
+       <input type="text" id="description" onChange={this.handleChangeDescription} value={description}/>
+     </div>
+
+       <div>
+           <button onClick={this.handleAddTask}>Agregar</button>
+       </div>
+
+       <ul>
+           {
+               tasks.map((task) => <li>{task.title}</li>)
+           }
+       </ul>
+
+   </div>
+  );
+}
+}
+
+export default App;

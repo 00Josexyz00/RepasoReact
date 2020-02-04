@@ -1,0 +1,18 @@
+app.js
+
+
+import React from 'react';
+import Desing from './componets/formCard';
+import tasks from './sample/tasks.json'
+import './App.css';
+
+console.log(tasks);
+function App() {
+  return (
+    <div >
+        <Desing/>
+    </div>
+  );
+}
+
+export default App;

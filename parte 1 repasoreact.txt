@@ -1,0 +1,18 @@
+import React from 'react';
+import './App.css';
+
+//componente
+function Helloworld() {
+    return(
+        <div> Hello world </div>
+    )
+}
+
+//funcion
+function App() {
+    return (
+        <div> this is my componet: <Helloworld/> </div>
+    );
+}
+
+export default App;

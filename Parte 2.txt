@@ -1,0 +1,32 @@
+import React from 'react';
+import './App.css';
+
+//componente
+function Helloworld() {
+    return(
+        <div id="Hello"> Hello world </div>
+    )
+}
+
+//funcion flecha
+const App =()=> <div> This is my componet <Helloworld/></div>
+
+
+//funcion normal
+function App() {
+    return (
+        <div> this is my componet:
+            <Helloworld/>
+            <Helloworld/>
+        </div>
+    );
+}
+
+//clase
+class App extends React.Component{
+    render() {
+        return <div> This is my componet <Helloworld/></div>
+    }
+}
+
+export default App;
